@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OORJA</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="project_submission.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /*background-image: url('/static/Picsart_1.png');*/
+            /*background-repeat: no-repeat;*/
+            /*background-size: cover;*/
+            /*background-attachment: fixed;*/
+            /* Add other CSS properties as needed */
+        }
+
+        .reg-card {
+            background-color: #000d1d;
+            box-shadow: 0 6px 10px rgba(0, 88, 189, 0.411);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer; /* Add cursor pointer to indicate interactivity */
+            transition: transform 0.3s ease; /* Add smooth transition for zoom effect */
+            box-shadow: 
+        0 0 20px rgb(255, 0, 247),  /* Neon purple shadow at the top */
+        10px 0 20px rgba(0, 255, 255, 0.8),  /* Neon cyan shadow at the right */
+        0 0 20px rgb(255, 221, 0),     /* Neon yellow shadow at the bottom */
+        -10px 0 20px rgba(255, 69, 0, 0.8);   /* Neon red shadow at the left */
+        }
+        
+        .reg-card:hover {
+            transform: scale(1.05); /* Zoom in on hover */
+        }
+        
+        .reg-card h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bolder;
+            color: #3b0000;
+        }
+        
+        .reg-card p {
+            font-size: 1.5rem;
+            color: #012b00;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .reg-card-details {
+            display: none;
+            max-height: 200px; /* Set a maximum height for the card details */
+            overflow-y: auto; /* Add vertical scroll if the content overflows */
+        }
+        
+        .reg-card-details p {
+            margin: 0;
+        }
+        
+        .reg-card.active .card-details {
+            display: block; /* Show card details when card is active */
+        }
+        .reg-card button {
+            background-color: #ff00ff; /* Neon pink */
+            color: #fff;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .reg-card button:hover {
+            background-color: #e600e6; /* Slightly darker pink on hover */
+            box-shadow: 
+                0 0 10px rgba(255, 0, 255, 0.8),   /* Neon purple shadow at the top */
+                0 0 10px rgba(0, 255, 255, 0.8),   /* Neon cyan shadow at the right */
+                0 0 10px rgba(255, 255, 0, 0.8),   /* Neon yellow shadow at the bottom */
+                0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .reg-card {
+                margin-left: 5%;
+                margin-right: 5%;
+                box-shadow: 
+        0 0 10px rgb(255, 0, 247),  /* Neon purple shadow at the top */
+        10px 0 10px rgba(0, 255, 255, 0.8),  /* Neon cyan shadow at the right */
+        0 0 10px rgb(255, 221, 0),     /* Neon yellow shadow at the bottom */
+        -10px 0 10px rgba(255, 69, 0, 0.8);   /* Neon red shadow at the left */
+            
+            }
+
+            .reg-card:hover {
+                transform: none; /* Zoom in on hover */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">OORJA</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/register.html" onclick="showLoadingPopup()" ;>register</a></li>
+                    <li><a href="/contact.html" onclick="showLoadingPopup()">contact</a></li>
+                    <!-- Add other navigation links as needed -->
+                </ul>
+                <div class="hamburger" onclick="toggleNav()">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+    <script type="text/javascript">var submitted=false</script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onload="if(submitted){window.location='submission';}"></iframe>
+            <br>
+            <br>
+            <br>
+            <br>
+<div class="form-container">
+        <form action="https://docs.google.com/forms/d/e/<.......>/formResponse" method="post" target="hiddenConfirm" onsubmit="submitted=true">
+            <div class="form-step" data-step="1" style="display: block;">
+                <div class="reg-card">
+                    <h4>Step 1</h4>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="entry.61047850" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="entry.467716674" placeholder="example@gmail.com" required>
+                        <small class="error-message" id="emailError" style="color: red;"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="number" id="phonenumber" name="entry.72673120" placeholder="9999999999" required>
+                        <small class="error-message" id="phoneError" style="color: red;"></small>
+                    </div>
+                    <button type="button" class="next-btn" onclick="validateStep1()">Next</button>
+                </div>
+            </div>
+            <div class="form-step" data-step="2" style="display: none;">
+                <div class="reg-card">
+                    <h4>Step 2</h4>
+                    <div class="form-group">
+                        <label for="branchandcourse">Branch and Course</label>
+                        <select id="branchandcourse" name="entry.1604221286" required>
+                            <option value="">Select</option>
+                            <option value="B.Tech CSE">B.Tech CSE</option>
+                            <option value="B.Tech ECE">B.Tech ECE</option>
+                            <option value="B.Tech ME">B.Tech ME</option>
+                            <option value="B.Tech EEE">B.Tech EEE</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BBA">BBA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedinAccount">Linkedin Account</label>
+                        <input type="text" id="linkedinAccount" name="entry.1241038986" placeholder="Your linkedin profile link" required>
+                        <small class="error-message" id="linkedinError" style="color: red;"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="githubAccount">Github Account</label>
+                        <input type="text" id="githubAccount" name="entry.221216914" placeholder="Your github link" required>
+                        <small class="error-message" id="githubError" style="color: red;"></small>
+                    </div>
+
+                    <button type="button" class="prev-btn" onclick="prevStep(1)">Previous</button>
+                    <button type="button" class="next-btn" onclick="validateStep2()">Next</button>
+                </div>
+            </div>
+            <div class="form-step" data-step="3" style="display: none;">
+                <div class="reg-card">
+                    <h4>Step 3:</h4>
+                    <div class="form-group">
+                        <label for="bran">Terms and Conditions</label>
+                        <select id="bran" required>
+                            <option value="">Select</option>
+                            <option value="Agree">I Agree</option>
+                        </select>
+                    </div>
+                    <button type="button" class="prev-btn" onclick="prevStep(2)">Previous</button>
+                    <button type="submit" id="myCustomButtonID" onclick="hideButton(); showLoadingPopup()">Submit Form</button>
+
+
+                    <!-- Loading popup -->
+                    <div class="loading-popup" id="loadingPopup">
+                        <div class="loading-spinner"></div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <section id="space">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data Dynamos </p>
+            <a href="https://www.linkedin.com/in/divyanshukr12"><p>Host - Divyanshu Kumar </p></a>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var submitted = false;
+        var currentStep = 1;
+
+        function nextStep(step) {
+            document.querySelector(`[data-step="${step - 1}"]`).style.display = "none";
+            document.querySelector(`[data-step="${step}"]`).style.display = "block";
+            currentStep = step;
+        }
+
+        function prevStep(step) {
+            document.querySelector(`[data-step="${step + 1}"]`).style.display = "none";
+            document.querySelector(`[data-step="${step}"]`).style.display = "block";
+            currentStep = step;
+        }
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+        <script>
+        function showLoadingPopup() {
+            const loadingPopup = document.getElementById('loadingPopup');
+            loadingPopup.style.display = 'flex'; // Show the popup
+        }
+
+        // You might want to implement a function to hide the popup when loading is complete.
+        // For example, you could add a setTimeout to simulate loading and then hide the popup.
+        function hideLoadingPopup() {
+            const loadingPopup = document.getElementById('loadingPopup');
+            loadingPopup.style.display = 'none'; // Hide the popup
+        }
+
+        // Simulate loading completion after 3 seconds
+        setTimeout(hideLoadingPopup, 3000);
+    </script>
+
+
+    <script>
+        function hideButton() {
+            const hideButton = document.getElementById('myCustomButtonID');
+            hideButton.style.display = 'none'; // Hide the button
+        }
+    </script>
+
+
+
+    <script>
+
+function validateStep1() {
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phonenumber');
+const emailError = document.getElementById('emailError');
+const phoneError = document.getElementById('phoneError');
+
+const email = emailInput.value;
+const phoneNumber = phoneInput.value;
+
+if (!isValidEmail(email)) {
+    emailError.textContent = 'Please enter a valid email address';
+    setTimeout(() => {
+        emailError.textContent = ''; // Clear the error message
+    }, 4000); // Show the error message for 4 seconds
+    return;
+}
+
+if (!isValidPhoneNumber(phoneNumber)) {
+    phoneError.textContent = 'Please enter a valid phone number';
+    setTimeout(() => {
+        phoneError.textContent = ''; // Clear the error message
+    }, 4000); // Show the error message for 4 seconds
+    return;
+}
+
+nextStep(2); // Proceed to the next step
+}
+
+function isValidEmail(email) {
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+return emailPattern.test(email);
+}
+
+function isValidPhoneNumber(phoneNumber) {
+// You can customize this validation based on your phone number format
+const phonePattern = /^\d{10}$/;
+return phonePattern.test(phoneNumber);
+}
+
+
+
+
+function validateStep2() {
+    const linkedinInput = document.getElementById('linkedinAccount');
+    const githubInput = document.getElementById('githubAccount');
+    const linkedinError = document.getElementById('linkedinError');
+    const githubError = document.getElementById('githubError');
+
+    const linkedinUrl = linkedinInput.value;
+    const githubUrl = githubInput.value;
+
+    if (!isValidUrl(linkedinUrl)) {
+        linkedinError.textContent = 'Please enter a valid LinkedIn URL';
+        setTimeout(() => {
+            linkedinError.textContent = ''; // Clear the error message
+        }, 4000); // Show the error message for 4 seconds
+        return;
+    }
+    if (!isValidUrl(githubUrl)) {
+        githubError.textContent = 'Please enter a valid GitHub URL';
+        setTimeout(() => {
+            githubError.textContent = ''; // Clear the error message
+        }, 4000); // Show the error message for 4 seconds
+        return;
+    }
+
+    nextStep(3)
+
+}
+
+function isValidUrl(url) {
+    const urlPattern = /^(https?:\/\/)?(www\.)?(linkedin\.com|github\.com)\/.+$/i;
+    return urlPattern.test(url);
+}
+</script>
+</body>
+</html>

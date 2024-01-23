@@ -1,86 +1,128 @@
-* {
+/* Default Dark Mode Styles */
+body {
+  background-color: #01101d; /* Dark background color */
+  color: #fff; /* Light text color */
+  touch-action: manipulation;
+}
+
+/* Background Images */
+#backgroundDiv1 {
+  background-image: url('/static/pngwing.com\ \(1\).png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Main Header Styles */
+header {
+  background-color: #000111;;;
+  color: #ebffa4;
+  padding: 1rem 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: #fff;
+.nav-links li {
+  margin-left: 2rem;
 }
 
-html {
-  font-size: 62.5%;
+.nav-links li:first-child {
+  margin-left: 0;
 }
 
-.logo {
-  margin-left: 120px;
-}
-
-.logo img {
-  width: 150px;
-  height: 110px;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: darkslategray;
-  height: 10rem;
-  width: auto;
-}
-
-.navbar .navmenu {
-  display: flex;
-  align-items: center;
+.nav-links a {
   text-decoration: none;
-  margin-right: 30px;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.2s ease;
 }
 
-.navbar .navmenu .navitem {
-  text-decoration: none;
-  margin-right: 7rem;
-  list-style-type: none;
+.nav-links a:hover {
+  color: #45a049; /* Change the hover color as desired */
 }
 
-.navbar .navmenu .navitem a {
-  text-decoration: none;
-  text-transform: capitalize;
-  font-size: 2rem;
-  font-weight: 600;
-  color: aqua;
-  transition: 0.5s ease-in;
-  position: relative;
-}
-
-.navbar .navmenu .navitem a:hover::before {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: aqua;
-}
-
+/* Hamburger Menu Styles for mobile */
 .hamburger {
-  font-size: 3rem;
   display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #410ff8;
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links li {
+      margin: 1rem 0;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .show {
+      display: block;
+  }
 }
+
+/* Section Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  padding: 1.5rem 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #86e1ffef; /* Neon blue for the heading */
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: #87e1fff3; /* Neon blue for the heading */
+  /* margin-bottom: 1.5rem; */
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #88ffe7f3; /* Neon green for the paragraph text */
+  font-weight: bold;
+}
+
 
 #banner-container {
   position: relative;
   width: 100%;
-  height: 400px; 
+  height: 620px; 
   overflow: hidden;
   margin-top: 3px;
 }
@@ -124,4 +166,259 @@ html {
   height: 400px;
   width: 100%;
   border-radius: 10px;
+}
+
+
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #45a049; /* Dark mode button color */
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #349635; /* Dark mode button hover color */
+  cursor: pointer;
+}
+
+/* Animation for the Get Involved button */
+.btn-animated {
+  position: relative;
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.2); /* Animation color */
+  border-radius: 4px;
+  transform: scale(0);
+  z-index: -1;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-animated:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #cecececb;
+}
+
+/* Project Cards Styles */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.card {
+  width: 300px;
+  margin: 20px;
+  background-color: #f3f8ff11; /* Deep charcoal gray background color */
+  box-shadow: 
+      0 0 20px rgb(255, 0, 247),  /* Neon purple shadow at the top */
+      10px 0 20px rgba(0, 255, 255, 0.8),  /* Neon cyan shadow at the right */
+      0 0 20px rgb(255, 221, 0),     /* Neon yellow shadow at the bottom */
+      -10px 0 20px rgba(255, 69, 0, 0.8);   /* Neon red shadow at the left */
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #555; /* Darker border for the image */
+}
+
+.card-content {
+  padding: 10px;
+  /* color: #ddd; Lighter text color for better contrast */
+}
+
+.card-content h3 {
+  margin-top: 0;
+  /* color: #fff; White color for the heading */
+}
+
+.card-button {
+  text-align: center;
+  padding: 15px;
+}
+
+.card-button button {
+  background-color: #ff00ff; /* Neon pink */
+  color: #fff;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.card-button button:hover {
+  background-color: #e600e6; /* Slightly darker pink on hover */
+  box-shadow: 
+      0 0 10px rgba(255, 0, 255, 0.8),   /* Neon purple shadow at the top */
+      0 0 10px rgba(0, 255, 255, 0.8),   /* Neon cyan shadow at the right */
+      0 0 10px rgba(255, 255, 0, 0.8),   /* Neon yellow shadow at the bottom */
+      0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+
+
+
+
+/* Media Queries for Dark Mode */
+@media screen and (max-width: 768px) {
+
+  /* Sliding Navigation Menu for Mobile */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start the menu off-screen */
+  height: 100vh;
+  width: 70%; /* Set the width of the menu */
+  background-color: #011930;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  transition: right 0.3s ease;
+  z-index: 999; /* Ensure the menu appears above other elements */
+}
+
+.nav-links.show {
+  right: 0; /* Slide the menu into view */
+}
+
+.hamburger {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff; /* Set hamburger icon color */
+  z-index: 1000; /* Ensure the hamburger icon appears above other elements */
+}
+
+.hamburger.close {
+  display: none; /* Hide the close icon initially */
+}
+
+/* Show the close icon when the menu is open */
+.nav-links.show .hamburger.close {
+  display: block;
+}
+
+/* Hide the hamburger icon when the menu is open */
+.nav-links.show .hamburger.open {
+  display: none;
+} 
+
+
+
+  .logo {
+      font-size: 1.2rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  .btn {
+      font-size: 0.9rem;
+  }
+
+  .btn:hover {
+      background-color: #349635;
+      cursor: pointer;
+  }
+
+  .project-cards {
+      grid-template-columns: 1fr;
+  }
+
+  .card {
+      width: 90%;
+  }
+
+  .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: bolder;
+  }
+
+  .card p {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+  }
+}
+
+/* Loading Popup Styles */
+.loading-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-spinner {
+  border: 4px solid #fff;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);}
 }

@@ -1,4 +1,3 @@
-
 const banner = document.getElementById('banner-container');
 const images = document.querySelectorAll('.banner-image');
 const dotsContainer = document.getElementById('dots-container');

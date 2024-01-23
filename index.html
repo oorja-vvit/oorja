@@ -1,46 +1,723 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>OORJA</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://vjs.zencdn.net/7.16.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.16.0/video.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #010f20;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: bolder;
+            color: #86e1ffef; /* Neon blue for the heading */
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            font-weight: bolder;
+            color: #87e1fff3; /* Neon blue for the heading */
+            /* margin-bottom: 1.5rem; */
+        }
+        
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #88ffe7f3; /* Neon green for the paragraph text */
+            font-weight: bold;
+        }
+        /* Responsive Card Styles */
+        .ccard {
+            width: 100%;
+            max-width: 800px; /* Adjust the maximum width as needed */
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 
+        0 0 10px rgb(255, 0, 247),  /* Neon purple shadow at the top */
+        10px 0 10px rgba(0, 255, 255, 0.8),  /* Neon cyan shadow at the right */
+        0 0 10px rgb(255, 221, 0),     /* Neon yellow shadow at the bottom */
+        -10px 0 10px rgba(255, 69, 0, 0.8);   /* Neon red shadow at the left */
+    border-radius: 8px;
+        }
+
+        /* Responsive Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (YouTube standard) */
+            overflow: hidden;
+        }
+
+        /* Style the Video Player */
+        #my-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* Updated styling for the static element on the right */
+        .static-element {
+        clip-path: polygon(100% 100%, 0 100%, 50% 0, 100% 0);
+        position: absolute;
+        width: 50%;
+        height: 620px;
+        top: 50%;
+        right: 0;
+        background-color: black;
+        background-image: url("/assets/banner/5120567.jpg");
+        transform: translate(0, -50%);
+        color: #fff;
+        z-index: 1; /* Ensure static element is on top of the slash */
+        }
+        
+          .static-element h2 {
+            font-size: 30px;
+          }
+        
+          .static-element p {
+            font-size: 20px;
+            
+          }
+
+          .static-element div {
+            margin-top: 5%;
+            margin-left: 30%;
+            
+          }
+
+          .static-element img {
+            width: 70%;
+            height: auto;
+            display: block;
+            margin-top: 7%;
+          }
+
+          .static-element button {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .static-element button {
+            background-color: #ff00ff; /* Neon pink */
+            color: #fff;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .static-element button:hover {
+            background-color: #e600e6; /* Slightly darker pink on hover */
+            box-shadow: 
+                0 0 10px rgba(255, 0, 255, 0.8),   /* Neon purple shadow at the top */
+                0 0 10px rgba(0, 255, 255, 0.8),   /* Neon cyan shadow at the right */
+                0 0 10px rgba(255, 255, 0, 0.8),   /* Neon yellow shadow at the bottom */
+                0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+
+        .containerr {
+            padding-top: 0;
+            background-color: #010f20;
+        }
+        .slick-slide{
+            margin: 0 20px;
+        }
+        .slick-slide img{
+            width: 100%;
+        }
+        .slick-slider{
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+        }
+        .slick-list{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .slick-track{
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block
+        }
+        .slick-slide{
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+        .slick-slide img{
+            display: block;
+            -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+        }
+        .slick-initialized .slick-slide{
+            display: block;
+        }
+        .copy{
+            padding-top: 0;
+        }
+
+
+          @media (max-width: 768px) {
+            .static-element {
+                width: 90%;
+                clip-path: none;
+                left: 50%;
+                right: auto;
+                background-color: rgba(0, 0, 0, 0.555);
+                background-image: none;
+                transform: translateX(-50%) translateY(-50%);
+                justify-content: center;
+                align-items: center;
+                margin-top: 5%;
+                margin-left: 0%;
+            }
+
+            .static-element div {
+                margin-left: 0%;
+                margin-bottom: 10%;
+                
+              }
+
+              .static-element img {
+                width: 50%;
+                height: auto;
+                display: block;
+                
+              }
+
+              .static-element h2 {
+                font-size: 30px;
+                color: #fff;
+              }
+            
+              .static-element p {
+                font-size: 20px;
+                color: #fff;
+                
+              }
+
+              .ccard {
+                width: 85%;
+                max-width: 800px; /* Adjust the maximum width as needed */
+                margin: 0 auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 
+        0 0 10px rgb(255, 0, 247),  /* Neon purple shadow at the top */
+        10px 0 10px rgba(0, 255, 255, 0.8),  /* Neon cyan shadow at the right */
+        0 0 10px rgb(255, 221, 0),     /* Neon yellow shadow at the bottom */
+        -10px 0 10px rgba(255, 69, 0, 0.8);   /* Neon red shadow at the left */
+                
+            }
+
+            
+        }
+
+        </style>
+
+        <style>
+            .card {
+                width: 300px;
+                margin: 20px;
+                background-color: #f3f8ff11; /* Deep charcoal gray background color */
+                box-shadow: 
+                    0 0 20px rgb(255, 0, 247),  /* Neon purple shadow at the top */
+                    10px 0 20px rgba(0, 255, 255, 0.8),  /* Neon cyan shadow at the right */
+                    0 0 20px rgb(255, 221, 0),     /* Neon yellow shadow at the bottom */
+                    -10px 0 20px rgba(255, 69, 0, 0.8);   /* Neon red shadow at the left */
+                border-radius: 8px;
+                overflow: hidden;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .card:hover {
+                transform: scale(1.05);
+            }
+            
+            .card-image {
+                overflow: hidden;
+            }
+            
+            .card-image img {
+                width: 100%;
+                height: auto;
+                border-bottom: 1px solid #555; /* Darker border for the image */
+            }
+            
+            .card-content {
+                padding: 10px;
+                /* color: #ddd; Lighter text color for better contrast */
+            }
+            
+            .card-content h3 {
+                margin-top: 0;
+                /* color: #fff; White color for the heading */
+            }
+            
+            .card-button {
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .card-button button {
+                background-color: #ff00ff; /* Neon pink */
+                color: #fff;
+                padding: 10px 28px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            
+            .card-button button:hover {
+                background-color: #e600e6; /* Slightly darker pink on hover */
+                box-shadow: 
+                    0 0 10px rgba(255, 0, 255, 0.8),   /* Neon purple shadow at the top */
+                    0 0 10px rgba(0, 255, 255, 0.8),   /* Neon cyan shadow at the right */
+                    0 0 10px rgba(255, 255, 0, 0.8),   /* Neon yellow shadow at the bottom */
+                    0 0 10px rgba(255, 0, 0, 0.8);
+            }
+
+            @media screen and (max-width: 768px) {
+
+                /* Sliding Navigation Menu for Mobile */
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                right: -100%; /* Start the menu off-screen */
+                height: 100vh;
+                width: 70%; /* Set the width of the menu */
+                background-color: #011930;
+                color: #fff;
+                text-align: center;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999; /* Ensure the menu appears above other elements */
+            }
+            
+            .nav-links.show {
+                right: 0; /* Slide the menu into view */
+            }
+            
+            .hamburger {
+                display: block;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #fff; /* Set hamburger icon color */
+                z-index: 1000; /* Ensure the hamburger icon appears above other elements */
+            }
+            
+            .hamburger.close {
+                display: none; /* Hide the close icon initially */
+            }
+            
+            /* Show the close icon when the menu is open */
+            .nav-links.show .hamburger.close {
+                display: block;
+            }
+            
+            /* Hide the hamburger icon when the menu is open */
+            .nav-links.show .hamburger.open {
+                display: none;
+            } 
+            
+            
+            
+                .logo {
+                    font-size: 1.2rem;
+                }
+            
+                h2 {
+                    font-size: 1.5rem;
+                }
+            
+                p {
+                    font-size: 1rem;
+                }
+            
+                .btn {
+                    font-size: 0.9rem;
+                }
+            
+                .btn:hover {
+                    background-color: #349635;
+                    cursor: pointer;
+                }
+            
+                .project-cards {
+                    grid-template-columns: 1fr;
+                }
+            
+                .card {
+                    width: 90%;
+                }
+            
+                .card h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    font-weight: bolder;
+                }
+
+                .card h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    font-weight: bolder;
+                }
+            
+                .card p {
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+            }
+            
+            /* Loading Popup Styles */
+            .loading-popup {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            
+            .loading-spinner {
+                border: 4px solid #fff;
+                border-top: 4px solid #3498db;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                animation: spin 2s linear infinite;
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg);}
+            }
+            
+            
+        </style>
 </head>
+
 <body>
+
+
     <header>
-        <nav class="navbar">
-          <div class="logo">
-            <img src="oorja.png">
+        <div class="header-container">
+            <div class="logo">OORJA</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/register.html" onclick="showLoadingPopup()" ;>register</a></li>
+                    <li><a href="/contact.html" onclick="showLoadingPopup()">contact</a></li>
+                    <!-- Add other navigation links as needed -->
+                </ul>
+                <div class="hamburger" onclick="toggleNav()">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    
+
+
+
+    <div id="banner-container">
+        <img src="/assets/banner/1.jpg" alt="Image 1" class="banner-image">
+        <img src="/assets/banner/2.jpg" alt="Image 2" class="banner-image">
+        <img src="/assets/banner/3.jpg" alt="Image 3" class="banner-image">
+        <img src="/assets/banner/4.jpg" alt="Image 4" class="banner-image">
+        <img src="/assets/banner/5.jpg" alt="Image 5" class="banner-image">
+        <img src="/assets/banner/6.jpg" alt="Image 6" class="banner-image">
+        <img src="/assets/banner/7.jpg" alt="Image 7" class="banner-image">
+        
+        <div class="static-element">
+            <div><center><img src="/assets/logo.png"  alt="Logo">
+            
+            <h2>Vidya Vihar <br> Institute of Technology</h2>
+            <p>Maranga, Purnea<br>- 854301</p>
+                <button onclick="showLoadingPopup(); window.location='register.html';">Register Yourself</button></center>
+        </div>
           </div>
-          <ul class="navmenu">
-            <li class="navitem"><a href="#" class="nav-list">Home</a></li>
-            <li class="navitem">
-              <a href="about.html" class="nav-list">about oorja</a>
-            </li>
-            <li class="navitem"><a href="#" class="nav-list">Event</a></li>
-            <li class="navitem"><a href="#" class="nav-list">Sponsor</a></li>
-            <li class="navitem"><a href="#" class="nav-list">Gallery</a></li>
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </nav>
-      </header>
-      <div id="banner-container">
-        <img src="istockphoto-1129802214-612x612.jpg" alt="Image 1" class="banner-image">
-        <img src="istockphoto-1381030718-612x612.jpg" alt="Image 2" class="banner-image">
-        <img src="istockphoto-144324113-612x612.jpg" alt="Image 3" class="banner-image">
-        <img src="istockphoto-491050030-612x612.jpg" alt="Image 4" class="banner-image">
-        <img src="istockphoto-522121310-612x612.jpg" alt="Image 5" class="banner-image">
-        <img src="istockphoto-533194649-612x612.jpg" alt="Image 6" class="banner-image">
-        <img src="maxime-bhm-icyZmdkCGZ0-unsplash.jpg" alt="Image 7" class="banner-image">
-        <div id="dots-container"></div>
+        <div id="dots-container">
+            
+        </div>
       </div>
-      <div class="hero-banner">
-        <img src="OORJA.png">
-      </div>
+
+
+      <div class="containerr">
+        <div class="customer-logos slider">
+            <div class="slide"><img src="sponsors/1.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/2.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/3.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/4.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/5.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/6.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/7.png" alt="logo"></div>
+            <div class="slide"><img src="sponsors/8.png" alt="logo"></div>
+        </div>
+    </div>
+      
       <script src="script.js"></script>
+
+
+
+
+
+        <section id="hero">
+            <div class="container">
+                <h2>OORJA Fest: Unleashing Talent, Empowering Voices, and Building Community at Vidya Vihar Institute of Technology</h2>
+                <p>In the bustling realm of creativity and innovation at Vidya Vihar Institute of Technology, OORJA Fest stands as a dynamic platform that goes beyond the conventional definition of a festival. More than a showcase of talents, OORJA is a celebration of individuality, a forum for expression, and a community builder that weaves together the diverse voices within the institute. As we eagerly anticipate the upcoming OORJA Fest, let's explore the essence of this vibrant celebration and the inclusive spirit that makes it a cornerstone of the institute's culture.
+                </p>
+            </div>
+        </section>
+
+
+        <div class="ccard">
+            <!-- Responsive Video Container -->
+            <div class="video-container">
+                <video id="my-video" class="video-js vjs-default-skin" controls>
+                    <source src="/assets/oorja.mp4" type="video/mp4">
+                    <!-- Include additional source elements for other video formats -->
+                    <!-- <source src="path/to/your/video.webm" type="video/webm"> -->
+                    <!-- <source src="path/to/your/video.ogv" type="video/ogg"> -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+
+        <section id="about">
+            <div class="container">
+                <!-- <img src="{{ url_for('static', filename='ai_iot_image.png') }}" alt="AI and IoT Image"> -->
+                <p>OORJA Fest is not merely an event; it is a canvas where students paint their aspirations, showcase their skills, and leave an indelible mark of creativity. With a myriad of events spanning arts, technology, sports, and more, OORJA provides a stage for students to explore, experiment, and excel. It's a platform where hidden talents come to light, and every participant is encouraged to shine. Through this celebration of talent, OORJA becomes a testament to the incredible capabilities that lie within the students of Vidya Vihar Institute of Technology.</p>
+            </div>
+        </section>
+
+        
+
+        <!-- Loading popup -->
+        <div class="loading-popup" id="loadingPopup">
+            <div class="loading-spinner"></div>
+        </div>
+        <section id="memb">
+            <div class="container">
+                <h2>Events</h2>
+                <div class="project-cards">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/hack1.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Hackthon</h3>
+                        </div></center>
+                    </div>
+
+                    
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/cricket.jpeg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>T10 Cricket</h3>
+                        </div></center>
+                    </div>
+                    
+
+                    
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/running.jpeg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Running</h3>
+                        </div></center>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/volly.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Volleyball</h3>
+                        </div></center>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/carrom.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Carrom</h3>
+                        </div></center>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/dance.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Dancing</h3>
+                        </div></center>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/sing.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Singing</h3>
+                        </div></center>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/drone.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Robotics</h3>
+                        </div></center>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/ch.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>Chess</h3>
+                        </div></center>
+                    </div>
+
+
+                    <!-- <div class="card" onclick="showLoadingPopup(); window.location='researchers';">
+                        <div class="card-image">
+                            <img src="/assets/chess.jpg" alt="Card Image">
+                        </div>
+                        <center><div class="card-content">
+                            <h3>T10 Cricket</h3>
+                        </div></center>
+                        <div class="card-button">
+                            <button>View event</button>
+                        </div>
+                    </div> -->
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Add more sections and content as needed -->
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Data Dynamos </p>
+                <a href="https://www.linkedin.com/in/divyanshukr12"><p>Host - Divyanshu Kumar </p></a>
+            </div>
+        </footer>
+
+        <!-- JavaScript for mobile navigation toggle -->
+        <script>
+            function toggleNav() {
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.classList.toggle('show');
+            }
+        </script>
+
+        <script>
+            function showLoadingPopup() {
+                const loadingPopup = document.getElementById('loadingPopup');
+                loadingPopup.style.display = 'flex'; // Show the popup
+            }
+
+            // You might want to implement a function to hide the popup when loading is complete.
+            // For example, you could add a setTimeout to simulate loading and then hide the popup.
+            function hideLoadingPopup() {
+                const loadingPopup = document.getElementById('loadingPopup');
+                loadingPopup.style.display = 'none'; // Hide the popup
+            }
+
+            // Simulate loading completion after 3 seconds
+            setTimeout(hideLoadingPopup, 3000);
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var player = videojs('my-video');
+            });
+        </script>
+        
+        <script>
+    
+            $(document).ready(function(){
+                $('.customer-logos').slick({
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover:false,
+                    responsive: [{
+                        breakpoint: 768,
+                        setting: {
+                            slidesToShow:4
+                        }
+                    }, {
+                        breakpoint: 520,
+                        setting: {
+                            slidesToShow: 3
+                        }
+                    }]
+                });
+            });
+        
+            </script>
 </body>
+
 </html>

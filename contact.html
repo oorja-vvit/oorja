@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OORJA</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://vjs.zencdn.net/7.16.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.16.0/video.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive Card Styles */
+        .ccard {
+            width: 100%;
+            max-width: 800px;
+            /* Adjust the maximum width as needed */
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow:
+                0 0 10px rgb(255, 0, 247),
+                /* Neon purple shadow at the top */
+                10px 0 10px rgba(0, 255, 255, 0.8),
+                /* Neon cyan shadow at the right */
+                0 0 10px rgb(255, 221, 0),
+                /* Neon yellow shadow at the bottom */
+                -10px 0 10px rgba(255, 69, 0, 0.8);
+            /* Neon red shadow at the left */
+            border-radius: 8px;
+        }
+
+        /* Style all font awesome icons */
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+          }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #55ACEE;
+    color: white;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+  }
+
+  @media (max-width: 768px) {
+
+    section {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0;
+        margin-top: 20%;
+      }
+
+      .ccard {
+        width: 85%;
+        max-width: 800px;
+        /* Adjust the maximum width as needed */
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow:
+            0 0 10px rgb(255, 0, 247),
+            /* Neon purple shadow at the top */
+            10px 0 10px rgba(0, 255, 255, 0.8),
+            /* Neon cyan shadow at the right */
+            0 0 10px rgb(255, 221, 0),
+            /* Neon yellow shadow at the bottom */
+            -10px 0 10px rgba(255, 69, 0, 0.8);
+        /* Neon red shadow at the left */
+
+    }
+  }
+
+        
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="header-container">
+            <div class="logo">OORJA</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/register.html" onclick="showLoadingPopup()" ;>register</a></li>
+                    <li><a href="/contact.html" onclick="showLoadingPopup()">contact</a></li>
+                    <!-- Add other navigation links as needed -->
+                </ul>
+                <div class="hamburger" onclick="toggleNav()">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+
+
+<br>
+<br>
+
+
+
+   <center>
+    <section>
+        <iframe class="ccard" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1796.9401937239952!2d87.45833615540532!3d25.741468857393276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eff956132e5fe7%3A0x8837d898824e7186!2sVidya%20Vihar%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1705989945737!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <div class="contact">
+        <div>
+            <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-linkedin"></a>
+        </div>
+        <h3>+91 8448448730</h3>
+        <h3>oorjavvit@gmail.com</h3>
+        <a href="https://vvit.org/"><h3>https://vvit.org/</h3></a>
+        </div>
+        
+
+    </section></center>
+
+    <section>
+
+    </section>
+
+
+
+
+    <!-- Add more sections and content as needed -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data Dynamos </p>
+            <a href="https://www.linkedin.com/in/divyanshukr12"><p>Host - Divyanshu Kumar </p></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile navigation toggle -->
+    <script>
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+    <script>
+        function showLoadingPopup() {
+            const loadingPopup = document.getElementById('loadingPopup');
+            loadingPopup.style.display = 'flex'; // Show the popup
+        }
+
+        // You might want to implement a function to hide the popup when loading is complete.
+        // For example, you could add a setTimeout to simulate loading and then hide the popup.
+        function hideLoadingPopup() {
+            const loadingPopup = document.getElementById('loadingPopup');
+            loadingPopup.style.display = 'none'; // Hide the popup
+        }
+
+        // Simulate loading completion after 3 seconds
+        setTimeout(hideLoadingPopup, 3000);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var player = videojs('my-video');
+        });
+    </script>
+
+</body>
+
+</html>

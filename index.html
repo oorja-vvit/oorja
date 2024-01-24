@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
         body {
@@ -141,48 +142,68 @@
             padding-top: 0;
             background-color: #010f20;
         }
-        .slick-slide{
+        
+        .slick-slide {
             margin: 0 20px;
+            height: auto; /* Allow the height to adjust based on content */
         }
-        .slick-slide img{
+        
+        .slick-slide img {
             width: 100%;
+            height: auto; /* Ensure images scale proportionally */
         }
-        .slick-slider{
+        
+        .slick-slider {
             position: relative;
             display: block;
             box-sizing: border-box;
         }
-        .slick-list{
+        
+        .slick-list {
             position: relative;
             display: block;
             overflow: hidden;
             margin: 0;
             padding: 0;
         }
-        .slick-track{
+        
+        .slick-track {
             position: relative;
             top: 0;
             left: 0;
-            display: block
+            display: flex; /* Use flex display to adjust to content height */
         }
-        .slick-slide{
-            display: none;
-            float: left;
-            height: 100%;
-            min-height: 1px;
+        
+        .slick-slide {
+            display: flex; /* Use flex display to adjust to content height */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100%;
         }
-        .slick-slide img{
+        
+        .slick-slide img {
             display: block;
             -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
         }
-        .slick-initialized .slick-slide{
-            display: block;
+        
+        .slick-initialized .slick-slide {
+            display: flex; /* Use flex display to adjust to content height */
         }
-        .copy{
+        
+        .copy {
             padding-top: 0;
         }
-
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .slick-slide {
+                margin: 0 10px; /* Adjust margin for smaller screens */
+            }
+        }
+        
 
           @media (max-width: 768px) {
             .static-element {
@@ -461,16 +482,16 @@
 
 
     <div id="banner-container">
-        <img src="/assets/banner/1.jpg" alt="Image 1" class="banner-image">
-        <img src="/assets/banner/2.jpg" alt="Image 2" class="banner-image">
-        <img src="/assets/banner/3.jpg" alt="Image 3" class="banner-image">
-        <img src="/assets/banner/4.jpg" alt="Image 4" class="banner-image">
-        <img src="/assets/banner/5.jpg" alt="Image 5" class="banner-image">
-        <img src="/assets/banner/6.jpg" alt="Image 6" class="banner-image">
-        <img src="/assets/banner/7.jpg" alt="Image 7" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/1.jpg" alt="Image 1" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/2.jpg" alt="Image 2" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/3.jpg" alt="Image 3" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/4.jpg" alt="Image 4" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/5.jpg" alt="Image 5" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/6.jpg" alt="Image 6" class="banner-image">
+        <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/banner/7.jpg" alt="Image 7" class="banner-image">
         
         <div class="static-element">
-            <div><center><img src="/assets/logo.png"  alt="Logo">
+            <div><center><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/logo.png"  alt="Logo">
             
             <h2>Vidya Vihar <br> Institute of Technology</h2>
             <p>Maranga, Purnea<br>- 854301</p>
@@ -485,14 +506,14 @@
 
       <div class="containerr">
         <div class="customer-logos slider">
-            <div class="slide"><img src="sponsors/1.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/2.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/3.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/4.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/5.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/6.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/7.png" alt="logo"></div>
-            <div class="slide"><img src="sponsors/8.png" alt="logo"></div>
+            <div class="/sponsors/1.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/2.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/3.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/4.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/5.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/6.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/7.png" alt="logo"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/sponsors/8.png" alt="logo"></div>
         </div>
     </div>
       
@@ -545,7 +566,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/hack1.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/hack1.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Hackthon</h3>
@@ -556,7 +577,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/cricket.jpeg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/cricket.jpeg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>T10 Cricket</h3>
@@ -567,7 +588,7 @@
                     
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/running.jpeg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/running.jpeg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Running</h3>
@@ -577,7 +598,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/volly.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/volly.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Volleyball</h3>
@@ -586,7 +607,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/carrom.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/carrom.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Carrom</h3>
@@ -595,7 +616,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/dance.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/dance.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Dancing</h3>
@@ -605,7 +626,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/sing.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/sing.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Singing</h3>
@@ -615,7 +636,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/drone.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/drone.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Robotics</h3>
@@ -624,7 +645,7 @@
 
                     <div class="card">
                         <div class="card-image">
-                            <img src="/assets/ch.jpg" alt="Card Image">
+                            <img src="https://raw.githubusercontent.com/oorja-vvit/oorja/main/assets/ch.jpg" alt="Card Image">
                         </div>
                         <center><div class="card-content">
                             <h3>Chess</h3>
@@ -718,6 +739,30 @@
             });
         
             </script>
+
+            <script type="module">
+                // Import the functions you need from the SDKs you need
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
+              
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                  apiKey: "AIzaSyBCSlifhojxkQ6n-ShvQ5VDLA_af6WWeiw",
+                  authDomain: "oorja-837cf.firebaseapp.com",
+                  projectId: "oorja-837cf",
+                  storageBucket: "oorja-837cf.appspot.com",
+                  messagingSenderId: "691334441997",
+                  appId: "1:691334441997:web:3ca2cebfa6e9d4a9613944",
+                  measurementId: "G-BD2TK45GTV"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+              </script>
 </body>
 
 </html>
